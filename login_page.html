@@ -1,0 +1,149 @@
+
+
+
+<html>
+<head>
+<title>Login Page</title>
+
+<body style="background-image:url('bgimg.jpg'); 
+		background-size: 1500px 10000px;">
+ 
+   <header>
+      <h1 style="font-family:verdana;
+		 font-size:350%;
+		 color:red;
+		 text-align:center;
+		 border:2px solid Tomato;">
+
+           Login
+      </h1>
+   </header>
+
+
+
+
+
+
+
+<style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color:LightGray;
+}
+
+
+
+li a {
+  display: block;
+  color: black;
+  text-align: center;
+  font-size:28px;
+  padding: 20px 20px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color:DodgerBlue;
+}
+
+.active {
+  background-color: ;
+}
+</style>
+
+
+
+<center>
+<ul>
+  <li style="float: left;"><a href="home.html">Home		</a></li>&nbsp;&nbsp;
+  <li style="float: left;"><a href="engmovie.html">English Movies	</a></li>&nbsp;&nbsp;
+  <li style="float: left;"><a href="engtv.html">English TV Series	</a></li>&nbsp;&nbsp;
+  <li style="float: left;"><a href="hindimovie.html">Hindi Movies	</a></li>&nbsp;&nbsp;
+  <li style="float: left;"><a href="hindiwebser.html">Hindi Web Series	</a></li>&nbsp;&nbsp;
+  <li style="float: left;"><a href="login_page.html">Login		</a></li>
+  <li style="float: left;"><a href="about_us.html">About us		</a></li>
+</ul>
+</center>
+
+
+<script type="text/javascript">
+function validate()
+{
+if(document.myForm.Name.value == "")
+{
+alert("Please provide your name!");
+document.myForm.Name.focus();
+return false;
+}
+if(document.myForm.Email.value == "")
+{
+alert("Please provide your Email!");
+document.myForm.Email.focus();
+return false;
+}
+var emailID = document.myForm.Email.value;
+atpos = emailID.indexOf("@");
+dotpos = emailID.lastIndexOf(".");
+if (atpos < 1 || (dotpos - atpos < 2))
+{
+alert("Please enter correct email ID")
+document.myForm.Email.focus();
+return false;
+}
+if( (document.myForm.zip.value == "") ||
+isNaN(document.myForm.zip.value) ||
+(document.myForm.zip.value.length !== 6))
+{
+alert("Please provide a zip in the format #####.");
+document.myForm.zip.focus();
+return false;
+}
+if(document.myForm.Country.value == "-1")
+{
+alert("Please provide your Country!");
+return false;
+}
+return(true);
+}
+</script>
+</head>
+<body>
+<form name="myForm" onsubmit="return(validate());">
+<br><br>
+<table cellspacing="40" cellpadding="4" border="2" align="center">
+<tr>
+<td align="right" style="color:orange; font-family:castellar";><strong>Name</strong></td>
+<td><input type="text" name="Name" /></td>
+</tr>
+<tr>
+<td align="right" style="color:orange; font-family:castellar";><strong>Email</strong></td>
+<td><input type="text" name="Email" /></td>
+</tr>
+<tr>
+<td align="right" style="color:orange ; font-family:castellar";><strong>Zip Code</strong></td>
+<td><input type="text" name="zip" /></td>
+</tr>
+<tr>
+<td align="right" style="color:orange ; font-family:castellar";><strong>Country</strong></td>
+<td>
+<select name="Country">
+<option value="-1" selected>[choose yours]</option>
+<option value="1">USA</option>
+<option value="2">UK</option>
+<option value="3">INDIA</option>
+</select>
+</td>
+</tr>
+<tr>
+<td align="right"></td>
+<td><input type="submit" value="submit"/></td>
+</tr>
+</table>
+</form>
+</body>
+</html>
+
+

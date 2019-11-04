@@ -1,0 +1,83 @@
+
+
+
+<html>
+<head>
+<title>Form Validation</title>
+<script type="text/javascript">
+function validate()
+{
+if(document.myForm.Name.value == "")
+{
+alert("Please provide your name!");
+document.myForm.Name.focus();
+return false;
+}
+if(document.myForm.Email.value == "")
+{
+alert("Please provide your Email!");
+document.myForm.Email.focus();
+return false;
+}
+var emailID = document.myForm.Email.value;
+atpos = emailID.indexOf("@");
+dotpos = emailID.lastIndexOf(".");
+if (atpos < 1 || (dotpos - atpos < 2))
+{
+alert("Please enter correct email ID")
+document.myForm.Email.focus();
+return false;
+}
+if( (document.myForm.zip.value == "") ||
+isNaN(document.myForm.zip.value) ||
+(document.myForm.zip.value.length == 6))
+{
+alert("Please provide a zip in the format #####.");
+document.myForm.zip.focus();
+return false;
+}
+if(document.myForm.Country.value == "-1")
+{
+alert("Please provide your Country!");
+return false;
+}
+return(true);
+}
+</script>
+</head>
+<body>
+<form name="myForm" onsubmit="return(validate());">
+<table cellspacing="2" cellpadding="2" border="1">
+<tr>
+<td align="right">Name</td>
+<td><input type="text" name="Name" /></td>
+</tr>
+<tr>
+<td align="right">Email</td>
+<td><input type="text" name="Email" /></td>
+</tr>
+<tr>
+<td align="right">zip code</td>
+<td><input type="text" name="zip code" /></td>
+</tr>
+<tr>
+<td align="right">Country</td>
+<td>
+<select name="country">
+<option value="-1" selected>[choose yours]</option>
+<option value="1">USA</option>
+<option value="2">UK</option>
+<option value="3">INDIA</option>
+</select>
+</td>
+</tr>
+<tr>
+<td align="right"></td>
+<td><input type="submit" value="submit"></td>
+</tr>
+</table>
+</form>
+</body>
+</html>
+
+
